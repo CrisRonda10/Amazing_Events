@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+  <link rel="stylesheet" href="./style/style.css">
+  <title>Amazing Events - Home</title>
+</head>
+
+<body>
+  
+  <header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 offset-1">
+          <img id="Logo" src="./images/logo.png" height="120" width="150" alt="Logo">
+        </div>
+
+        <nav class="navbar navbar-expand-lg col-6 alin offset-3" style="background-color: darkslategray;">
+          <div class="container-fluid justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+              aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+              <div class="navbar-nav align-items-end">
+                <a id="A" class="nav-link active" aria-current="page" href="#">Home</a>
+                <a id="A" class="nav-link" href="./upcoming_Events.html">Upcoming Events</a>
+                <a id="A" class="nav-link" href="./past_Events.html">Past Events</a>
+                <a id="A" class="nav-link" href="./contact.html">Contact</a>
+                <a id="A" class="nav-link" href="./stats.html">Stats</a>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </header>
+  
+  <main> 
+    
+    <div class="container-fluid" style="background-color: lightslategray; border: 2px solid black;">
+      <div class="row align-items-center" style="height: 100px;">
+        <h1 class="col-10 offset-1 d-flex justify-content-center">Home</h1>
+        <a class="col-1 d-flex justify-content-center" id="Next" href="./upcoming_Events.html">></a>
+      </div>
+    </div>
+
+    <div class="container" style="margin-top: 30px; margin-bottom: 75px;">
+      <div class="row align-items-center" style="height: 50px;">
+        <div class="form-check form-check-inline col">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+          <label class="form-check-label" for="defaultCheck1">Category</label>
+        </div>
+        <div class="form-check form-check-inline col">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck2">
+          <label class="form-check-label" for="defaultCheck2">Category</label>
+        </div>
+        <div class="form-check form-check-inline col">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck3">
+          <label class="form-check-label" for="defaultCheck3">Category</label>
+        </div>
+        <div class="form-check form-check-inline col">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck4">
+          <label class="form-check-label" for="defaultCheck4">Category</label>
+        </div>
+        <div class="form-check form-check-inline col">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck5">
+          <label class="form-check-label" for="defaultCheck5">Category</label>
+        </div>
+        <div class="form-check form-check-inline col">
+          <input type="search" name="search" id="search" placeholder="Search">
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row grid gap-5 justify-content-evenly">
+        <div id="cartita" class="row grid gap-5 justify-content-evenly"></div>
+        <!-- <div id="card">
+          <img id="Fotos" src="./images/Cinema.jpg" id="Fotos" alt="Cinema photo">
+          <div class="card-body">
+            <h5 class="card-title text-center">Título</h5>
+            <p class="card-text text-center">Categoría:</p>
+            <p class="card-text text-center">Fecha:</p>
+            <div class="card-body d-flex justify-content-between">
+            <p class="text-center">Price $00000</p>
+            <a href="./details.html" class="btn btn-primary" style="font-size: small;">See more...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem; border: 2px solid black; background-color: beige; border-radius: 20px;">
+          <img id="Fotos" src="./images/Costume_Party.jpg" class="card-img-top" alt="Party photo">
+          <div class="card-body">
+            <h5 class="card-title text-center">Título</h5>
+            <p class="card-text text-center">Texto descriptivo</p>
+            <div class="card-body d-flex justify-content-between">
+            <p class="text-center">Price $00000</p> 
+            <a href="./details.html" class="btn btn-primary" style="font-size: small;">See more...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem; border: 2px solid black; background-color: beige; border-radius: 20px;">
+          <img id="Fotos" src="./images/Food_Fair.jpg" class="card-img-top" alt="Food fair photo">
+          <div class="card-body">
+            <h5 class="card-title text-center">Título</h5>
+            <p class="card-text text-center">Texto descriptivo</p>
+            <div class="card-body d-flex justify-content-between">
+            <p class="text-center">Price $00000</p> 
+            <a href="./details.html" class="btn btn-primary" style="font-size: small;">See more...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem; border: 2px solid black; background-color: beige; border-radius: 20px;">
+          <img id="Fotos" src="./images/Marathon.jpg" class="card-img-top" alt="Marathon photo">
+          <div class="card-body">
+            <h5 class="card-title text-center">Título</h5>
+            <p class="card-text text-center">Texto descriptivo</p>
+            <div class="card-body d-flex justify-content-between">
+            <p class="text-center">Price $00000</p> 
+            <a href="./details.html" class="btn btn-primary" style="font-size: small;">See more...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem; border: 2px solid black; background-color: beige; border-radius: 20px;">
+          <img id="Fotos" src="./images/Museum_Tour.jpg" class="card-img-top" alt="Museum photo">
+          <div class="card-body">
+            <h5 class="card-title text-center">Título</h5>
+            <p class="card-text text-center">Texto descriptivo</p>
+            <div class="card-body d-flex justify-content-between">
+            <p class="text-center">Price $00000</p> 
+            <a href="./details.html" class="btn btn-primary" style="font-size: small;">See more...</a>
+            </div>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem; border: 2px solid black; background-color: beige; border-radius: 20px;">
+          <img id="Fotos" src="./images/Music_Concert.jpg" class="card-img-top" alt="Music concert photo">
+          <div class="card-body">
+            <h5 class="card-title text-center">Título</h5>
+            <p class="card-text text-center">Texto descriptivo</p>
+            <div class="card-body d-flex justify-content-between">
+            <p class="text-center">Price $00000</p> 
+            <a href="./details.html" class="btn btn-primary" style="font-size: small;">See more...</a>
+            </div>
+          </div>
+        </div> -->
+      </div>  
+    </div>
+  </main>
+
+  <footer style="border: 2px solid black;">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-6 d-flex justify-content-center" style="margin-top: 22px;">
+          <a href="http://www.instagram.com" target="_blank"><img src="./images/IG.png" alt="Logo IG"></a>
+          <a href="http://www.facebook.com" target="_blank"><img src="./images/Face.png" alt="Logo Face"></a>
+          <a href="http://www.whatsapp.com" target="_blank"><img src="./images/Whatsapp.png" alt="Logo Whatsapp"></a>
+        </div>
+        <div class="col-6 d-flex justify-content-center align-items-center" style="margin-top: 25px;">
+          <h4>Cohort</h4>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+    crossorigin="anonymous"></script>
+  <script src="./scripts/data.js"></script>
+  <script src="./scripts/home.js"></script>  
+</body>
+
+</html>
