@@ -1,6 +1,7 @@
 console.log([document])
 let query = location.search
 
+
 let parametros = new URLSearchParams(query)
 console.log(parametros)
 
@@ -31,5 +32,6 @@ container.innerHTML = `<div class="row col-12 d-flex justify-content-center" sty
 </div>
 </div>
 </div>
+<a href="${document.referrer}" class="card-text d-flex justify-content-center">Back</a>
 </div>
 </div>`

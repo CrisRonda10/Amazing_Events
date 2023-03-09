@@ -1,7 +1,3 @@
-console.log(data.events.length + " es el número total de eventos")
-
-console.log("La fecha base es " + data.currentDate)
-
 // *** SEPARO LAS CARDS EN PAST Y UPCOMING ***
 
  let pastEvents = []
@@ -14,9 +10,6 @@ console.log("La fecha base es " + data.currentDate)
          upcomingEvents.push(data.events[i])
      }
  }
-
-console.log(pastEvents + " estos son los past events")
-console.log(upcomingEvents + " estos son los upcoming events")
 
 // *** MUESTRO LAS CARDS DE PAST EVENTS ***
 
@@ -80,7 +73,6 @@ pastEvents.forEach(cate => {
         category.push(cate.category)
     }
 })
-console.log(category)
 
 // *** CREANDO CHECKBOX POR CADA CATEGORÍA ***
 
@@ -104,48 +96,35 @@ category.forEach(item =>{
 
 
 let checkboxButtons = document.querySelectorAll("input[type='checkbox']")
-console.log(checkboxButtons)
 
 checkboxButtons.forEach(box => box.addEventListener('change', estaChequeado))
 
 function estaChequeado(){
     let chequeado = Array.from(checkboxButtons).filter(checkbox => checkbox.checked)
-    console.log(chequeado)
     let arrayNuevasCards = filtrarCategorias(pastEvents, chequeado)
-    console.log(arrayNuevasCards)
     crearCards(arrayNuevasCards, '#cartita'); {
         if (chequeado.length == 0 || arrayNuevasCards.length == 0){
             crearCards(pastEvents,'#cartita')
         }
     }
-   
 }
 
 let categoriasFiltradas = []
 
 function filtrarCategorias (array, valor){
-   
-    let categoriasFiltradas = []
-    
+    categoriasFiltradas = []
     let filtros = []
-    
     for (let v of valor){
-        filtros.push(v.value)
-        
+        filtros.push(v.value)   
     }
-    
     for (let i of filtros){
-        categoriasFiltradas = categoriasFiltradas.concat(array.filter(item => item.category === i))
-        
+        categoriasFiltradas = categoriasFiltradas.concat(array.filter(item => item.category === i)) 
     }
-    
     return categoriasFiltradas
 }
 
 function buscarValor(param, valor){
     let respuesta = []
-    console.log("param:", param)
-    console.log("valor:", valor)
     for (item of param){
         if(item.name.trim().toLowerCase().includes(valor.trim().toLowerCase()) || item.description.trim().toLowerCase().includes(valor.trim().toLowerCase())){
             respuesta.push(item)
@@ -155,12 +134,9 @@ function buscarValor(param, valor){
          alert("THIS EVENT DOESN'T EXIST")
         }
      crearCards(respuesta, '#cartita')
-     console.log("respuesta:", respuesta)
  }
 
 function handleSearch(search){
-    console.log("estoy buscando")
-    console.log("search:", search.target.value)
     if (search.target.value.length && categoriasFiltradas.length){
         buscarValor(categoriasFiltradas, search.target.value)
     }
@@ -173,6 +149,5 @@ function handleSearch(search){
 }
 
 let search = document.querySelector("input[type='search']")
-console.log(search)
 search.addEventListener('search', (e) =>{ handleSearch (e) })
 

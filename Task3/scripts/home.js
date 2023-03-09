@@ -1,7 +1,3 @@
-console.log(data.events.length + " es el número total de eventos")
-
-console.log("La fecha base es " + data.currentDate)
-
 // *** MUESTRO LAS CARDS EN HOME ***
 function crearCards(arr, contenedor){
   let cards = document.querySelector(contenedor)
@@ -69,9 +65,6 @@ for (let i = 0; i < data.events.length; i++) {
     }
 }
 
-console.log(pastEvents + " estos son los past events")
-console.log(upcomingEvents + " estos son los upcoming events")
-
 // *** SEPARO CATEGORÍAS EN ARRAY PARA SABER CUÁLES SON Y SIN REPETIRLAS *** 
 
 let category = []
@@ -81,7 +74,6 @@ data.events.forEach(cate => {
         category.push(cate.category)
     }
 })
-console.log(category)
 
 // *** CREANDO CHECKBOX POR CADA CATEGORÍA ***
 
@@ -101,19 +93,16 @@ category.forEach(item =>{
     label.appendChild(checkbox)
 })    
 
-
 // *** CREO ARRAY PARA AGREGAR EVENLISTENER A CADA CHECKBOX ***    
 
 let checkboxButtons = document.querySelectorAll("input[type='checkbox']")
-console.log(checkboxButtons)
 
 checkboxButtons.forEach(box => box.addEventListener('change', estaChequeado))
 
 function estaChequeado(){
     let chequeado = Array.from(checkboxButtons).filter(checkbox => checkbox.checked) // genera un array con los input chequeados
-    console.log(chequeado)
+    
     let arrayNuevasCards = filtrarCategorias(data.events,chequeado)
-    console.log(arrayNuevasCards)
     crearCards(arrayNuevasCards, '#cartita'); {
         if (chequeado.length == 0 || arrayNuevasCards.length == 0){
             crearCards(data.events, '#cartita')
@@ -125,43 +114,31 @@ function estaChequeado(){
 let categoriasFiltradas = []
 
 function filtrarCategorias (array, valor){
-    let categoriasFiltradas = []
-    
-    
+    categoriasFiltradas = []
     let filtros = []
-    
     for (let v of valor){
         filtros.push(v.value) // genero un array con los valores de los input 
-        console.log("filtros:", filtros)
     }
-    
     for (let i of filtros){
         categoriasFiltradas = categoriasFiltradas.concat(array.filter(item => item.category === i)) //concateno en un nuevo array los objetos que coinciden con la categoría obtenida en los filtros
-        console.log("categoriasFiltradas:", categoriasFiltradas)
     }
-    
     return categoriasFiltradas
 }
 
 function buscarValor(param, valor){
-    let respuesta = []
-    console.log("param:", param)
-    console.log("valor:", valor)
+    let respuesta = [] 
     for (item of param){
         if(item.name.trim().toLowerCase().includes(valor.trim().toLowerCase()) || item.description.trim().toLowerCase().includes(valor.trim().toLowerCase())){
             respuesta.push(item)
         } 
     }
         if(!respuesta.length){
-         alert("THIS EVENT DOESN'T EXIST")
+          alert("THIS EVENT DOESN'T EXIST")
         }
      crearCards(respuesta, '#cartita')
-     console.log("respuesta:", respuesta)
  }
 
 function handleSearch(search){
-    console.log("estoy buscando")
-    console.log("search:", search.target.value)
     if (search.target.value.length && categoriasFiltradas.length){
         buscarValor(categoriasFiltradas, search.target.value)
     }
@@ -174,12 +151,7 @@ function handleSearch(search){
 }
 
 let search = document.querySelector("input[type='search']")
-console.log(search)
-search.addEventListener('search', (e) =>{
-    
-    handleSearch (e) 
-
-})
+search.addEventListener('search', (e) =>{handleSearch (e)})
   
 
 
