@@ -130,24 +130,33 @@ function buscarValor(param, valor){
             respuesta.push(item)
         } 
     }
-        if(!respuesta.length){
-         alert("THIS EVENT DOESN'T EXIST")
-        }
-     crearCards(respuesta, '#cartita')
+    if(!respuesta.length){
+        crearMensaje()
+    }
+    crearCards(respuesta, '#cartita')
  }
 
 function handleSearch(search){
+    mensaje.innerHTML = ``
+    
     if (search.target.value.length && categoriasFiltradas.length){
         buscarValor(categoriasFiltradas, search.target.value)
     }
      if (search.target.value.length && !categoriasFiltradas.length){
          buscarValor(pastEvents, search.target.value)
      }
-     if(!search.target.value.length){
-         crearCards(pastEvents, '#cartita')
+     if(!search.target.value.length && categoriasFiltradas.length){
+         crearCards(categoriasFiltradas, '#cartita')
+     }
+     if(!search.target.value.length && !categoriasFiltradas.length){
+        crearCards(pastEvents, '#cartita')
      }
 }
 
 let search = document.querySelector("input[type='search']")
 search.addEventListener('search', (e) =>{ handleSearch (e) })
 
+let mensaje = document.querySelector('#Mensaje')
+function crearMensaje(){ 
+    mensaje.innerHTML = `<div class="row grid gap-5 justify-content-center align-items-center" style="border: 3px solid black; height: 70px;">THIS EVENT DOESN'T EXIST</div>`
+}
