@@ -1,13 +1,5 @@
 let urlApi = "https://mindhub-xj03.onrender.com/api/amazing"
 
-// fetch(urlApi)
-// .then(response => response.json())
-// .then(data => {
-//     console.log(data);
-//     console.log(data.events);
-// })
-
-
 // *** MUESTRO LAS CARDS EN HOME ***
 function crearCards(arr, contenedor) {
     let cards = document.querySelector(contenedor)
